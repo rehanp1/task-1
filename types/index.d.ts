@@ -5,4 +5,18 @@ interface PatientDetails {
   contact: string;
 }
 
+interface TestDetails {
+  name: string;
+  description: string;
+  cost: number;
+}
 
+interface ReportDetails {
+  patientId: string;
+  testId: string;
+  reportData: {
+    result: string;
+    remarks: string;
+    testedAt: Date;
+  };
+}
