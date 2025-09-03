@@ -4,12 +4,17 @@ import PatientsRouter from "./routes/patients.routes";
 import TestsRouter from "./routes/tests.routes";
 import ReportsRouter from "./routes/reports.routes";
 import connectDB from "./config/db";
+import swaggerUi from "swagger-ui-express";
+import swaggerDocument from "./swagger.json";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
+
+//Swagger api
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 //Routes
 app.use("/patients", PatientsRouter);
