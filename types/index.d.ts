@@ -20,3 +20,10 @@ interface ReportDetails {
     testedAt: Date;
   };
 }
+
+interface UserDetails {
+  firstname: string;
+  lastname?: string;
+  email: string;
+  password: string;
+}
